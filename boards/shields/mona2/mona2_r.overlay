@@ -64,7 +64,7 @@
 
 
 // Overrides for the input listener node
-trackball_central: trackball_central@0 {
+  trackball_central: trackball_central@0 {
         status = "okay";
         compatible = "pixart,pmw3610";  //トラボセンサ用のドライバとバインド
         reg = <0>;
@@ -79,4 +79,3 @@ trackball_central: trackball_central@0 {
         y-input-code = <INPUT_REL_Y>;
     };
 };
-

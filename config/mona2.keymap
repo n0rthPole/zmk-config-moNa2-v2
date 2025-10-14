@@ -248,10 +248,10 @@
 
         win_default_layer {
             bindings = <
-&lt 10 Q   &kp W         &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&lt 11 Q   &kp W         &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
 &kp A      &kp S         &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LCTRL MINUS
-&kp Z      &kp X         &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 13 LANGUAGE_1    &kp BACKSPACE  &lt 1 ENTER                                &kp LS(LG(S))
+&kp Z      &kp X         &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 13 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 10 LANGUAGE_1    &kp BACKSPACE  &lt 1 ENTER                                &kp LS(LG(S))
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -292,10 +292,10 @@
 
         mac_default_layer {
             bindings = <
-&lt 10 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&lt 11 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
 &kp A         &kp S      &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LEFT_GUI MINUS
-&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
-&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 13 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 13 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 10 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -325,10 +325,10 @@
 
         ios_default_layer {
             bindings = <
-&lt 10 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&lt 11 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
 &kp A         &kp S      &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LEFT_GUI MINUS
-&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
-&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 12 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 13 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 13 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -354,6 +354,15 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        Macro {
+            bindings = <
+&kp LA(F8)  &macro2    &trans                 &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                    &trans  &kp LS(LC(L))  &macro3  &trans  &trans
+&kp LC(Y)   &kp LC(X)  &kp LS(LC(SEMICOLON))  &kp LC(MINUS)    &trans                       &trans  &trans  &trans         &trans   &trans  &trans
+&kp LC(Z)   &kp LC(C)  &macro0                &macro1          &trans             &trans    &trans  &trans  &trans         &trans   &trans  &trans
+&trans      &trans     &trans                 &trans           &trans             &trans    &trans  &trans                                  &trans
+            >;
         };
 
         bt_setting_layer {
@@ -387,15 +396,6 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
-        };
-
-        Macro {
-            bindings = <
-&kp LA(F8)  &macro2    &trans                 &kp LC(PAGE_UP)  &kp LC(PAGE_DOWN)                    &trans  &kp LS(LC(L))  &macro3  &trans  &trans
-&kp LC(Y)   &kp LC(X)  &kp LS(LC(SEMICOLON))  &kp LC(MINUS)    &trans                       &trans  &trans  &trans         &trans   &trans  &trans
-&kp LC(Z)   &kp LC(C)  &macro0                &macro1          &trans             &trans    &trans  &trans  &trans         &trans   &trans  &trans
-&trans      &trans     &trans                 &trans           &trans             &trans    &trans  &trans                                  &trans
-            >;
         };
     };
 };

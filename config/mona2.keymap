@@ -87,10 +87,10 @@
 
         layer_1 {
             bindings = <
-&kp ESC          &kp KP_NUMBER_7       &kp KP_N8   &kp KP_NUMBER_9  &kp MINUS                            &kp NUMBER_6  &kp NUMBER_7          &kp NUMBER_8           &kp NUMBER_9  &kp NUMBER_0
-&kp KP_MULTIPLY  &kp KP_NUMBER_4       &kp KP_N5   &kp KP_NUMBER_6  &kp COLON                       &kp  &kp           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp           &kp BACKSLASH
-&kp KP_SLASH     &kp KP_N1             &kp KP_N2   &kp KP_N3        &kp LS(MINUS)  &kp KP_NUM       &kp  &kp           &kp                   &kp                    &kp           &kp PIPE
-&mt LCTRL COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &kp  &kp                                                                      &kp
+&kp ESC          &kp KP_NUMBER_7       &kp KP_N8   &kp KP_NUMBER_9  &kp MINUS                               &trans         &kp LS(TAB)     &kp LG(TAB)     &trans           &kp TAB
+&kp KP_MULTIPLY  &kp KP_NUMBER_4       &kp KP_N5   &kp KP_NUMBER_6  &kp COLON                       &trans  &kp BACKSLASH  &mkp MB4        &kp UP_ARROW    &mkp MB5         &kp SINGLE_QUOTE
+&kp KP_SLASH     &kp KP_N1             &kp KP_N2   &kp KP_N3        &kp LS(MINUS)  &kp KP_NUM       &trans  &kp LC(HOME)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(END)
+&mt LCTRL COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &trans  &trans                                                          &trans
             >;
 
             sensor-bindings = <&scroll_right_left>;

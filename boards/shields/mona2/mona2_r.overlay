@@ -78,18 +78,4 @@
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
     };
-
-
-&trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-
-    scroller {
-      layers = <5>;
-      input-processors = <
-          &zip_xy_to_scroll_mapper
-          &zip_scroll_snap
-      >;
-    };
-
 };

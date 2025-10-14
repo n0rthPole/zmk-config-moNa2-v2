@@ -2,6 +2,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <physical_layouts.dtsi>
+#include <scroll-snap.dtsi>
 
 / {
     chosen {

@@ -1,3 +1,16 @@
+/{
+  split_inputs {
+    #address-cells = <1>;
+    #size-cells = <0>;
+
+    trackball_split: trackball@0 {
+      compatible = "zmk,input-split";
+      reg = <0>;
+    };
+
+  };
+};
+
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -79,17 +92,4 @@
             <&zip_scroll_scaler 1 5>,                           //スクロール量を1/4倍
             <&zip_scroll_snap>; 
     };
-};
-
-/{
-  split_inputs {
-    #address-cells = <1>;
-    #size-cells = <0>;
-
-    trackball_split: trackball@0 {
-      compatible = "zmk,input-split";
-      reg = <0>;
-    };
-
-  };
 };

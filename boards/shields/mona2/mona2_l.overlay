@@ -1,18 +1,4 @@
-/{
-  split_inputs {
-    #address-cells = <1>;
-    #size-cells = <0>;
-
-    trackball_split: trackball@0 {
-      compatible = "zmk,input-split";
-      reg = <0>;
-    };
-
-  };
-};
-
 #include "mona2.dtsi"
-#include <input/processors/report_rate_limit.dtsi>
 
 &kscan0 {
         col-gpios

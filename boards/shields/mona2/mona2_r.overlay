@@ -1,7 +1,8 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-
+#include <scroll-snap.dtsi>
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -76,6 +77,19 @@
             <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
             <&zip_scroll_scaler 1 5>;                           //スクロール量を1/4倍
+    };
+
+
+&trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+
+    scroller {
+      layers = <5>;
+      input-processors = <
+          &zip_xy_to_scroll_mapper
+          &zip_scroll_snap
+      >;
     };
 
 };

@@ -28,7 +28,3 @@
 &left_encoder {
     status = "okay";
 };
-
-&trackball_split {
-  input-processors = <&zip_report_rate_limit 16>; // limit to 16ms, default is 16ms
-};

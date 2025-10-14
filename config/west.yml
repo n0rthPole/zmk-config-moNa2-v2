@@ -37,8 +37,5 @@ manifest:
     - name: zmk-layout-shift
       remote: kot149
       revision: v1
-    - name: zmk-input-processor-report-rate-limit
-      remote: badjeff
-      revision: main
   self:
     path: config

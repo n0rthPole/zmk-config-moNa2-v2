@@ -106,7 +106,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 7 &tog_off 0>,
+                <&tog_off 4 &tog_off 0>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
                 <&macro_wait_time 500>,
@@ -119,11 +119,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 0 &tog_off 7 &tog_off 0>,
+                <&tog_off 0 &tog_off 4 &tog_off 0>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
                 <&macro_wait_time 500>,
-                <&tog_on 7 &bt BT_DISC 0 &bt BT_DISC 2>;
+                <&tog_on 4 &bt BT_DISC 0 &bt BT_DISC 2>;
 
             label = "BT1";
         };
@@ -132,7 +132,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&tog_off 0 &tog_off 7 &tog_off 0>,
+                <&tog_off 0 &tog_off 4 &tog_off 0>,
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 500>,

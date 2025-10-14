@@ -1,21 +1,8 @@
-/{
-  split_inputs {
-    #address-cells = <1>;
-    #size-cells = <0>;
-
-    trackball_split: trackball@0 {
-      compatible = "zmk,input-split";
-      reg = <0>;
-    };
-
-  };
-};
-
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <scroll-snap.dtsi>
-#include <input/processors.dtsi>
+
 
 &default_transform {
     col-offset = <6>;

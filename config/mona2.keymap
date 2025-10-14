@@ -248,10 +248,10 @@
 
         win_default_layer {
             bindings = <
-&lt 7 Q    &kp W         &kp E         &kp R                      &kp T                                                       &kp Y        &kp U    &kp I     &kp O     &kp P
-&kp A      &kp S         &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J    &kp K     &lt 3 L   &mt LCTRL MINUS
-&kp Z      &kp X         &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 9 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 10 LANGUAGE_1    &kp BACKSPACE  &lt 1 ENTER                               &kp LS(LG(S))
+&lt 10 Q   &kp W         &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&kp A      &kp S         &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LCTRL MINUS
+&kp Z      &kp X         &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 13 LANGUAGE_1    &kp BACKSPACE  &lt 1 ENTER                                &kp LS(LG(S))
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -292,10 +292,10 @@
 
         mac_default_layer {
             bindings = <
-&lt 7 Q       &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U    &kp I     &kp O     &kp P
-&kp A         &kp S      &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J    &kp K     &lt 3 L   &mt LEFT_GUI MINUS
-&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 9 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
-&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 10 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                               &kp LS(LG(NUMBER_4))
+&lt 10 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&kp A         &kp S      &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LEFT_GUI MINUS
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 13 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -313,6 +313,39 @@
         };
 
         mac_layer_2 {
+            bindings = <
+&kp F1        &kp F2          &kp F3            &kp F4        &kp F5                               &kp F6                   &kp F7               &kp F8         &kp F9    &kp F10
+&kp PLUS      &kp EXCL        &kp LS(NUMBER_6)  &kp QUESTION  &kp RIGHT_BRACKET            &none   &kp LEFT_BRACKET         &mkp MB1             &kp PAGE_UP    &mkp MB2  &kp SINGLE_QUOTE
+&none         &kp PERCENT     &kp AMPERSAND     &kp AT_SIGN   &trans             &trans    &none   &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp PAGE_DOWN  &trans    &kp F11
+&kp LEFT_GUI  &kp LEFT_SHIFT  &kp HASH          &trans        &trans             &trans    &trans  &trans                                                                 &kp F12
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        ios_default_layer {
+            bindings = <
+&lt 10 Q      &kp W      &kp E         &kp R                      &kp T                                                       &kp Y        &kp U     &kp I     &kp O     &kp P
+&kp A         &kp S      &kp D         &kp F                      &kp G                                        &trans         &kp H        &kp J     &kp K     &lt 3 L   &mt LEFT_GUI MINUS
+&kp Z         &kp X      &kp C         &kp V                      &kp B        &kp LS(N8)                      &kp LS(N9)     &kp N        &lt 12 M  &mkp MB1  &mkp MB2  &mt LEFT_SHIFT SLASH
+&kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt_to_layer_0 12 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                                &kp LS(LG(NUMBER_4))
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        ios_layer_1 {
+            bindings = <
+&kp ESC             &kp KP_NUMBER_7       &kp KP_N8   &kp KP_NUMBER_9  &kp MINUS                               &trans              &kp LS(TAB)            &kp LC(LA(D))   &trans             &kp TAB
+&kp KP_MULTIPLY     &kp KP_NUMBER_4       &kp KP_N5   &kp KP_NUMBER_6  &kp COLON                       &trans  &trans              &kp LG(RIGHT_BRACKET)  &kp UP_ARROW    &kp LG(BACKSLASH)  &kp SINGLE_QUOTE
+&kp KP_SLASH        &kp KP_N1             &kp KP_N2   &kp KP_N3        &kp LS(MINUS)  &kp KP_NUM       &trans  &kp LG(LEFT_ARROW)  &kp LEFT_ARROW         &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp LG(RIGHT_ARROW)
+&mt LEFT_GUI COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &trans  &trans                                                                        &trans
+            >;
+
+            sensor-bindings = <&scroll_right_left>;
+        };
+
+        ios_layer_2 {
             bindings = <
 &kp F1        &kp F2          &kp F3            &kp F4        &kp F5                               &kp F6                   &kp F7               &kp F8         &kp F9    &kp F10
 &kp PLUS      &kp EXCL        &kp LS(NUMBER_6)  &kp QUESTION  &kp RIGHT_BRACKET            &none   &kp LEFT_BRACKET         &mkp MB1             &kp PAGE_UP    &mkp MB2  &kp SINGLE_QUOTE

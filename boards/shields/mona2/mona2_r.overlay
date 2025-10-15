@@ -1,8 +1,6 @@
 #include "mona2.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <scroll-snap.dtsi>
-
 
 &default_transform {
     col-offset = <6>;
@@ -18,17 +16,16 @@
             ;
 };
 
-
 &pinctrl {
-    spi0_default: spi0_default {    //通常時(SPI通信中)のピン構成
+    spi0_default: spi0_default {    // 通常時(SPI通信中)のピン構成
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, //P0.05を指定(SCLK)
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,    //P0.04を指定(SDIOだからMOSI,MISO両方の役割を担う)
+            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, // P0.05 (SCLK)
+                <NRF_PSEL(SPIM_MOSI, 0, 4)>,    // P0.04 (SDIO: MOSI/MISO兼用)
                 <NRF_PSEL(SPIM_MISO, 0, 4)>;
         };
     };
 
-    spi0_sleep: spi0_sleep {    //スリープ時のピン構成(省電力)
+    spi0_sleep: spi0_sleep {        // スリープ時のピン構成(省電力)
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
                 <NRF_PSEL(SPIM_MOSI, 0, 4)>,
@@ -38,45 +35,70 @@
     };
 };
 
-
 &spi0 {
     status = "okay";
-    compatible = "nordic,nrf-spim"; //マイコンがnRFシリーズ
+    compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  // P0.09 (CS)
 
-  trackball_central: trackball_central@0 {
+    trackball_central: trackball_central@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";  //トラボセンサ用のドライバとバインド
+        compatible = "pixart,pmw3610";
         reg = <0>;
-        spi-max-frequency = <2000000>;  //最大2000000まで
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // P0.02 (MOTION)
         cpi = <600>;
-        //swap-xy;
-        invert-x; //COROPIT版ではコメントアウトを外す
-        invert-y; //COROPIT版ではコメントアウトを外す
+        // swap-xy;
+        // invert-x; // COROPIT版ではコメントアウトを外す
+        // invert-y; // COROPIT版ではコメントアウトを外す
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
     };
 };
 
+/* ===== ここから追加：スナップ付きスクロール用プロセッサの個体設定 ===== */
+ / {
+    /* スナップ強度・しきい値・保持時間などを調整するマッパーのインスタンス */
+    zip_xy_to_scroll_mapper0: zip_xy_to_scroll_mapper0 {
+        compatible = "zmk,zip-xy-to-scroll-mapper";
 
-// Overrides for the input listener node
+        /* スナップ調整（まずはデフォルト的な値。必要に応じて微調整） */
+        snap-threshold = <400>;       /* 軸切替の我慢度（↑で切替にくい） */
+        snap-deadtime-ms = <600>;     /* 同じ軸の最短維持時間 */
+        snap-timeout-ms = <1500>;     /* 停止後のロック解除タイムアウト */
+        snap-strength = <50>;         /* ロック強度（0–100想定） */
+
+        /* このレイヤーがONの時だけ XY→スクロール化＋スナップ */
+        scroll-layers = <13>;
+    };
+
+    /* （任意）前処理：Y反転/XY入替等をまとめる */
+    zip_xy_transform0: zip_xy_transform0 {
+        compatible = "zmk,zip-xy-transform";
+        transforms = <INPUT_TRANSFORM_X_INVERT>;
+        /* 例: transforms = <INPUT_TRANSFORM_Y_INVERT>; */
+        /* 例: transforms = <INPUT_TRANSFORM_Y_INVERT INPUT_TRANSFORM_XY_SWAP>; */
+    };
+};
+/* ===== 追加ここまで ===== */
+
+/* 既存のリスナーを、上のインスタンスを使う形に差し替え */
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
 
     scroller {
+        /* 層3を“スクロール層”として使用（MO(3)/TG(3)などで切替） */
         layers = <13>;
-        input-processors = 
-            // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
-            <&zip_xy_to_scroll_mapper>,                         //スクロールモードに変更
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,   //スクロールのX軸反転
-            <&zip_scroll_scaler 1 4>,                           //スクロール量を1/4倍
-            <&zip_scroll_snap>; 
+
+        /* 1) 前処理 → 2) XY→Scroll+Snap → 3) スクロール反転/スケール調整 */
+        input-processors =
+            <&zip_xy_transform0>,                  /* 前処理（X反転） */
+            <&zip_xy_to_scroll_mapper0>,           /* 自動スナップ付きスクロール化 */
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,  /* 水平スクロールを反転 */
+            <&zip_scroll_scaler 1 5>;              /* スクロール量スケール（実装依存） */
     };
 };

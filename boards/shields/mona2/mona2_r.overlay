@@ -59,27 +59,42 @@
     };
 };
 
-/* ===== ここから追加：スナップ付きスクロール用プロセッサの個体設定 ===== */
+/* ===== スナップ付きスクロール用プロセッサ ===== */
  / {
-    /* スナップ強度・しきい値・保持時間などを調整するマッパーのインスタンス */
+    /* XY→スクロール化＋スナップ（層3でのみ有効） */
     zip_xy_to_scroll_mapper0: zip_xy_to_scroll_mapper0 {
         compatible = "zmk,zip-xy-to-scroll-mapper";
+        #input-processor-cells = <0>;          /* ★ phandle-with-args 要件を満たす */
 
-        /* スナップ調整（まずはデフォルト的な値。必要に応じて微調整） */
-        snap-threshold = <400>;       /* 軸切替の我慢度（↑で切替にくい） */
-        snap-deadtime-ms = <600>;     /* 同じ軸の最短維持時間 */
-        snap-timeout-ms = <1500>;     /* 停止後のロック解除タイムアウト */
-        snap-strength = <50>;         /* ロック強度（0–100想定） */
+        snap-threshold = <400>;
+        snap-deadtime-ms = <600>;
+        snap-timeout-ms = <1500>;
+        snap-strength = <50>;
 
-        /* このレイヤーがONの時だけ XY→スクロール化＋スナップ */
-        scroll-layers = <13>;
+        scroll-layers = <3>;
     };
 
-    /* （任意）前処理：Y反転/XY入替等をまとめる */
+    /* 前処理（X反転など） */
     zip_xy_transform0: zip_xy_transform0 {
         compatible = "zmk,zip-xy-transform";
+        #input-processor-cells = <0>;          /* ★ こちらも追加 */
         transforms = <INPUT_TRANSFORM_X_INVERT>;
         /* 例: transforms = <INPUT_TRANSFORM_Y_INVERT>; */
         /* 例: transforms = <INPUT_TRANSFORM_Y_INVERT INPUT_TRANSFORM_XY_SWAP>; */
+    };
+};
+
+/* 入力リスナー：前処理 → スナップ付きスクロール → 仕上げ */
+&trackball_central_listener {
+    status = "okay";
+    device = <&trackball_central>;
+
+    scroller {
+        layers = <3>;
+        input-processors =
+            <&zip_xy_transform0>,                       /* 前処理（X反転） */
+            <&zip_xy_to_scroll_mapper0>,                /* 自動スナップ付きスクロール化 */
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, /* 水平スクロール反転 */
+            <&zip_scroll_scaler 1 5>;                   /* スクロール量スケール（実装依存） */
     };
 };

@@ -69,6 +69,9 @@
     status = "okay";
     device = <&trackball_central>;
 
+    // すべてのレイヤーに共通で適用されるカーソル移動量の倍率
+    input-processors = <&zip_xy_scaler 9 10>;
+
     scroller {
         layers = <13>;
         input-processors = 

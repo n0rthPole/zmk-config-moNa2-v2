@@ -7,8 +7,8 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
-#define MOUSE 5
-#define SCROLL 6
+#define MOUSE 12
+#define SCROLL 13
 
 &mt {
     flavor = "balanced";

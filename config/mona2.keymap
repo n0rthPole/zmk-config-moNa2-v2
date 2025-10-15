@@ -59,32 +59,32 @@
             label = "TO_LAYER_0";
         };
 
-        macro0: macro1 {
+        macro0: macro0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LC(V)) &kp V &kp ENTER>;
-            label = "MACRO1";
+            label = "MACRO0";
         };
 
-        macro1: macro2 {
+        macro1: macro1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(H) &kp M &kp C &kp ENTER>;
-            label = "MACRO2";
+            label = "MACRO1";
         };
 
-        macro2: macro3 {
+        macro2: macro2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(G) &kp LA(S) &kp K &kp ENTER>;
-            label = "MACRO3";
+            label = "MACRO2";
         };
 
-        macro3: macro0 {
+        macro3: macro3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp D &kp F &kp S>;
-            label = "MACRO0";
+            label = "MACRO3";
         };
 
         mkp_exit_AML: mkp_exit_AML {

@@ -16,7 +16,7 @@
 };
 
 &lt {
-    quick-tap-ms = <0>;
+    quick-tap-ms = <50>;
     flavor = "balanced";
 };
 

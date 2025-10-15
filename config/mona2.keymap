@@ -15,7 +15,10 @@
     quick-tap-ms = <0>;
 };
 
-
+// &lt {
+//     quick-tap-ms = <200>;
+//     flavor = "balanced";
+// };
 
 &sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
 / {

@@ -83,22 +83,3 @@
         /* 例: transforms = <INPUT_TRANSFORM_Y_INVERT INPUT_TRANSFORM_XY_SWAP>; */
     };
 };
-/* ===== 追加ここまで ===== */
-
-/* 既存のリスナーを、上のインスタンスを使う形に差し替え */
-&trackball_central_listener {
-    status = "okay";
-    device = <&trackball_central>;
-
-    scroller {
-        /* 層3を“スクロール層”として使用（MO(3)/TG(3)などで切替） */
-        layers = <13>;
-
-        /* 1) 前処理 → 2) XY→Scroll+Snap → 3) スクロール反転/スケール調整 */
-        input-processors =
-            <&zip_xy_transform0>,                  /* 前処理（X反転） */
-            <&zip_xy_to_scroll_mapper0>,           /* 自動スナップ付きスクロール化 */
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,  /* 水平スクロールを反転 */
-            <&zip_scroll_scaler 1 5>;              /* スクロール量スケール（実装依存） */
-    };
-};

@@ -63,11 +63,22 @@
     };
 };
 
+//AMLに関する設定。以下のキー以外を押すとAMLが解除される
+&zip_temp_layer {
+    excluded-positions = <
+        18 // J
+        19 // K
+        34 // Ctrl
+    >;
+};
+
 
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
+
+    input-processors = <&zip_temp_layer 5 10000>;
 
     scroller {
         layers = <13>;

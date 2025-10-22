@@ -20,6 +20,11 @@
     flavor = "balanced";
 };
 
+// AMLに関する設定。マウスキーを押したらタイムアウトを延長する。
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 12 10000>;
+};
+
 &sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
 / {
     combos {

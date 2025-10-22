@@ -63,6 +63,8 @@
     };
 };
 
+
+
 //AMLに関する設定。以下のキー以外を押すとAMLが解除される
 &zip_temp_layer {
     excluded-positions = <
@@ -71,6 +73,13 @@
         34 // Ctrl
     >;
 };
+
+
+//AMLに関する設定。キー入力中のオートマウスレイヤー誤爆防止
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 
 
 // Overrides for the input listener node

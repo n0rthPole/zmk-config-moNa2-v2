@@ -86,17 +86,6 @@
                 ;
     };
 
-
-    pmw3610: pmw3610@0 {
-        compatible = "pixart,pmw3610";
-        polling-rate = <100>;  // ← ここでポーリングレートを設定
-        irq-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW)>;  // IRQピン（例）
-        cs-gpios = <&xiao_d 7 (GPIO_ACTIVE_LOW)>;   // CSピン（例）
-        spi-max-frequency = <2000000>;              // SPI通信速度（例）
-        reg = <0>;
-    };
-
-
     //right hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";

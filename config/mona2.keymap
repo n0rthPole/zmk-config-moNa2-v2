@@ -305,7 +305,7 @@
             bindings = <
 &kp ESC             &kp KP_NUMBER_7       &kp KP_N8   &kp KP_NUMBER_9  &kp MINUS                               &trans              &kp LS(TAB)            &kp LC(UP_ARROW)  &trans             &kp TAB
 &kp KP_MULTIPLY     &kp KP_NUMBER_4       &kp KP_N5   &kp KP_NUMBER_6  &kp COLON                       &trans  &trans              &kp LG(RIGHT_BRACKET)  &kp UP_ARROW      &kp LG(BACKSLASH)  &kp SINGLE_QUOTE
-&kp KP_SLASH        &kp KP_N1             &kp KP_N2   &kp KP_N3        &kp LS(MINUS)  &kp KP_NUM       &trans  &kp LG(LEFT_ARROW)  &kp LEFT_ARROW         &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp LG(RIGHT_ARROW)
+&kp KP_SLASH        &kp KP_N1             &kp KP_N2   &kp KP_N3        &kp LS(MINUS)  &trans           &trans  &kp LG(LEFT_ARROW)  &kp LEFT_ARROW         &kp DOWN_ARROW    &kp RIGHT_ARROW    &kp LG(RIGHT_ARROW)
 &mt LEFT_GUI COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &trans  &trans                                                                          &trans
             >;
 

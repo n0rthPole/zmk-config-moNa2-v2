@@ -281,9 +281,9 @@
 
         win_layer_3 {
             bindings = <
-&kp LA(TAB)  &kp LG(LEFT_ARROW)      &kp LS(LC(UP_ARROW))    &kp LG(RIGHT_ARROW)      &trans                     &trans  &trans  &trans  &trans  &trans
-&kp HOME     &kp LS(LC(LEFT_ARROW))  &kp LS(LC(DOWN_ARROW))  &kp LS(LC(RIGHT_ARROW))  &kp END            &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &kp LS(LG(LEFT_ARROW))  &kp LG(D)               &kp LG(LS(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&kp LA(TAB)  &kp LG(LEFT_ARROW)      &kp LG(D)               &kp LG(RIGHT_ARROW)      &trans                     &trans  &trans  &trans  &trans  &trans
+&kp HOME     &kp LS(LG(LEFT_ARROW))  &kp LS(LC(UP_ARROW))    &kp LS(LG(RIGHT_ARROW))  &kp END            &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &kp LS(LC(LEFT_ARROW))  &kp LS(LC(DOWN_ARROW))  &kp LS(LC(RIGHT_ARROW))  &trans   &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans       &trans                  &trans                  &trans                   &trans   &trans    &trans  &trans                          &trans
             >;
 

@@ -8,6 +8,19 @@
     col-offset = <6>;
 };
 
+&zip_temp_layer {
+    excluded-positions = <
+        17 // J
+        19 // L
+        21 // Z
+        33 // Ctrl
+    >;
+};
+
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+};
+
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>

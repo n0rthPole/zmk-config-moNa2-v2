@@ -81,6 +81,8 @@
 &trackball_central_listener {
     status = "okay";
     device = <&trackball_central>;
+    input-processors = 
+        <&zip_temp_layer 12 10000>;
 
     scroller {
         layers = <13>;

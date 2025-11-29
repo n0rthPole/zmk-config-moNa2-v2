@@ -21,6 +21,9 @@
 };
 
 &sl { release-after-ms = <250>; }; // ダブルクリックに必要な時間を設定
+
+&mkp_input_listener { input-processors = <&zip_temp_layer 12 250>; };
+
 / {
     combos {
         compatible = "zmk,combos";

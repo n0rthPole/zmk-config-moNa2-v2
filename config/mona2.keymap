@@ -38,7 +38,7 @@
 
         right_click {
             bindings = <&mkp RCLK>;
-            key-positions = <17 19>;
+            key-positions = <19 18>;
         };
 
         comma {

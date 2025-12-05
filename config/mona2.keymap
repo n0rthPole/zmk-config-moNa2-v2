@@ -40,16 +40,6 @@
             bindings = <&mkp RCLK>;
             key-positions = <19 18>;
         };
-
-        comma {
-            bindings = <&kp COMMA>;
-            key-positions = <30 29>;
-        };
-
-        period {
-            bindings = <&kp PERIOD>;
-            key-positions = <31 30>;
-        };
     };
 
     macros {

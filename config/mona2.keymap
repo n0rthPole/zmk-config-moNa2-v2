@@ -173,8 +173,8 @@
         };
 
         encoder_msc: sensor_rotate_msc {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
             tap-ms = <20>;

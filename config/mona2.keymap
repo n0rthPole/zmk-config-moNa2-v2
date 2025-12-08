@@ -272,7 +272,7 @@
 &kp LCTRL                         &kp LEFT_WIN  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_SHIFT LANGUAGE_2  &lt 2 SPACE  &lt_to_layer_0 10 LANGUAGE_1    &kp BACKSPACE  &lt 1 ENTER                               &kp LS(LG(S))
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         win_layer_1 {

@@ -177,7 +177,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <20>;
+            tap-ms = <15>;
         };
 
         scroll_right_left: mouse_wheel_right_left {
@@ -185,7 +185,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
-            tap-ms = <20>;
+            tap-ms = <15>;
         };
 
         mt_exit_AML_on_tap: mt_exit_AML_on_tap {

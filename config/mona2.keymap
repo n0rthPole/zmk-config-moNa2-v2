@@ -283,7 +283,7 @@
 &mt LCTRL COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &trans  &trans                                                          &trans
             >;
 
-            sensor-bindings = <&scroll_right_left>;
+            sensor-bindings = <&encoder_msc SCRL_LEFT SCRL_RIGHT>;
         };
 
         win_layer_2 {
@@ -294,7 +294,7 @@
 &kp LCTRL  &kp LEFT_SHIFT  &kp HASH          &trans        &trans             &trans    &trans  &trans                                                                 &kp F12
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         win_layer_3 {
@@ -316,7 +316,7 @@
 &kp LEFT_GUI                      &kp LCTRL  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_SHIFT LANGUAGE_2  &lt 6 SPACE  &lt 10 LANGUAGE_1    &kp BACKSPACE  &lt 5 ENTER                             &kp LS(LG(NUMBER_4))
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         mac_layer_1 {
@@ -327,7 +327,7 @@
 &mt LEFT_GUI COMMA  &mt LEFT_SHIFT KP_N0  &kp KP_DOT  &kp DEL          &kp ENTER      &kp BACKSPACE    &trans  &trans                                                                          &trans
             >;
 
-            sensor-bindings = <&scroll_right_left>;
+            sensor-bindings = <&encoder_msc SCRL_LEFT SCRL_RIGHT>;
         };
 
         mac_layer_2 {
@@ -338,7 +338,7 @@
 &kp LEFT_GUI  &kp LEFT_SHIFT  &kp HASH          &trans        &trans             &trans    &trans  &trans                                                                 &kp F12
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         ios_default_layer {
@@ -349,7 +349,7 @@
 &kp LEFT_GUI  &kp LCTRL  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_SHIFT LANGUAGE_2  &lt 9 SPACE  &lt 13 LANGUAGE_1    &kp BACKSPACE  &lt 8 ENTER                                &kp LS(LG(NUMBER_4))
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         ios_layer_1 {
@@ -360,7 +360,7 @@
 &mt LEFT_GUI COMMA  &mt LEFT_SHIFT N0  &kp DOT       &kp DEL       &kp ENTER      &kp BACKSPACE    &trans  &trans                                                                        &trans
             >;
 
-            sensor-bindings = <&scroll_right_left>;
+            sensor-bindings = <&encoder_msc SCRL_LEFT SCRL_RIGHT>;
         };
 
         ios_layer_2 {
@@ -371,7 +371,7 @@
 &kp LEFT_GUI  &kp LEFT_SHIFT  &kp HASH          &trans        &trans             &trans    &trans  &trans                                                                 &kp F12
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         Macro {
@@ -391,7 +391,7 @@
 &trans  &trans  &trans  &trans       &trans  &trans         &trans       &trans                                               &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         MOUSE {
@@ -402,7 +402,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
         SCROLL {
@@ -413,7 +413,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
     };
 };

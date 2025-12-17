@@ -17,7 +17,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.4.0
+      revision: v0.4.1
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff

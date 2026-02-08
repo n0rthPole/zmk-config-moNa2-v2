@@ -288,10 +288,10 @@
 
         win_layer_2 {
             bindings = <
-&kp F1     &kp F2          &kp F3            &kp F4        &kp F5                               &kp F6                   &kp F7               &kp F8         &kp F9    &kp F10
-&kp PLUS   &kp EXCL        &kp LS(NUMBER_6)  &kp QUESTION  &kp RIGHT_BRACKET            &trans  &kp LEFT_BRACKET         &mkp MB1             &kp PAGE_UP    &mkp MB2  &kp SINGLE_QUOTE
-&none      &kp PERCENT     &kp AMPERSAND     &kp AT_SIGN   &trans             &trans    &none   &kp LS(INTERNATIONAL_1)  &kp INTERNATIONAL_3  &kp PAGE_DOWN  &trans    &kp F11
-&kp LCTRL  &kp LEFT_SHIFT  &kp HASH          &trans        &trans             &trans    &trans  &trans                                                                 &kp F12
+&kp F1               &kp F2          &kp F3            &kp F4        &kp F5                              &kp F6                   &kp F7             &kp F8         &kp F9         &kp F10
+&kp PLUS             &kp EXCL        &kp LS(NUMBER_6)  &kp QUESTION  &kp LEFT_BRACKET            &trans  &trans                   &mkp MB1           &kp PAGE_UP    &mkp MB2       &kp SINGLE_QUOTE
+&kp INTERNATIONAL_3  &kp PERCENT     &kp AMPERSAND     &kp AT_SIGN   &trans            &trans    &none   &kp LS(INTERNATIONAL_1)  &kp RIGHT_BRACKET  &kp PAGE_DOWN  &kp BACKSLASH  &kp F11
+&kp LCTRL            &kp LEFT_SHIFT  &kp HASH          &trans        &trans            &trans    &trans  &trans                                                                    &kp F12
             >;
 
             sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;

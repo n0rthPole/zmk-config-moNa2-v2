@@ -21,13 +21,13 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: badjeff
-      revision: main
+      revision: zmk-0.3
     # - name: zmk-driver-paw3222
     #   remote: sekigon-gonnoc
     #   revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
-      revision: main
+      revision: v0.3
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main

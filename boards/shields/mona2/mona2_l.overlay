@@ -14,25 +14,3 @@
 &left_encoder {
     status = "okay";
 };
-
-
-/ {
-        aliases {
-        　led-red = &led_red;
-        　led-green = &led_green;
-        　led-blue = &led_blue;
-        };
-
-        leds {
-        　compatible = "gpio-leds";
-        　led_red: led_red {
-                gpios = <&gpio0 26 GPIO_ACTIVE_LOW>; /* ← 要確認 */
-        　};
-        　led_green: led_green {
-                gpios = <&gpio0 30 GPIO_ACTIVE_LOW>; /* ← 要確認 */
-        　};
-        　led_blue: led_blue {
-                gpios = <&gpio0 6 GPIO_ACTIVE_LOW>; /* ← 要確認 */
-        　};
-　　};
-};
